@@ -1,0 +1,97 @@
+ body {
+            background-color: #f8f9fa;
+            font-family: Arial, sans-serif;
+        }
+
+        .container {
+            width: 70%;
+            margin: 8% auto;
+            padding: 20px;
+            background-color: #fff;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            display: flex;
+            justify-content: space-between;
+        }
+
+        .left-side {
+            width: 40%;
+            text-align: center;
+        }
+
+        .left-side img {
+            width: 100%;
+            border-radius: 10px;
+        }
+
+        .right-side {
+            width: 55%;
+            max-height: 80vh;
+            overflow-y: auto;
+            padding-right: 15px;
+        }
+
+        .right-side::-webkit-scrollbar {
+            width: 6px;
+        }
+
+        .right-side::-webkit-scrollbar-thumb {
+            background-color: rgba(0, 0, 0, 0.2);
+            border-radius: 3px;
+        }
+
+        .button-group {
+            margin-top: 20px;
+        }
+
+        .button-group button {
+            width: 100%;
+            padding: 10px;
+            font-size: 16px;
+            margin-top: 10px;
+            cursor: pointer;
+            border: none;
+            border-radius: 5px;
+        }
+
+        .button-group .save-btn {
+            background-color: #28a745;
+            color: white;
+        }
+
+        .button-group .back-btn {
+            background-color: #6c757d;
+            color: white;
+        }
+
+        h2 {
+            font-size: 24px;
+            font-weight: 400;
+            border-left: 5px solid red;
+            padding-left: 10px;
+            margin-bottom: 20px;
+        }
+
+        form {
+            display: flex;
+            flex-direction: column;
+        }
+
+        form label {
+            margin-top: 15px;
+            font-weight: bold;
+        }
+
+        form input[type="text"],
+        form input[type="email"],
+        form input[type="tel"] {
+            padding: 8px;
+            margin-top: 5px;
+            border-radius: 5px;
+            border: 1px solid #ccc;
+            font-size: 14px;
+        }
+
+        form input[type="radio"] {
+            margin-right: 5px;
+        }

@@ -1,0 +1,67 @@
+<!doctype html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org" >
+<head>
+	<meta charset="UTF-8" />
+	<title>Login</title>
+	<link rel="stylesheet" th:href="@{/css/login.css}" />
+	<link rel="stylesheet" th:href="@{/css/style.css}" />
+</head>
+<body style="font-family: Arial, sans-serif;
+    line-height: 1.6;
+    background-image: url('/image/bgimg3.jpg');
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    color: #333;">
+
+<ul>
+	<li style="float:left ; border-left:5px solid red"><a>Employee Management System</a></li>
+
+	<li><a th:href="@{/about}">About</a></li>
+	<li><a th:href="@{/register}">Register</a></li>
+
+<!--	<li><a th:href="@{/signin}">Login</a></li>-->
+
+	<li><a  th:href="@{/}">Home</a></li>
+</ul>
+
+<!-- Centered Login Form -->
+<section class="center">
+	<div style="display:flex;" class="container">
+		<!-- Left Side with Text -->
+		<div class="left-panel">
+			<h1>Very good works are waiting for you ✌</h1>
+			<p style="color:black">Login Now</p>
+		</div>
+		<!-- Right Side with Form -->
+		<div class="right-panel">
+			<form th:action="@{/dologin}" method="post" class="login-form">
+
+				<!-- Session Message -->
+				<div th:if="${session.vmsg}">
+					<th:block th:text="${#session.removeAttribute('vmsg')}"></th:block>
+				</div>
+
+				<!-- Error Message -->
+				<div th:if="${param.error}" class="message">
+					Invalid username and password
+				</div>
+
+				<!-- Logout Message -->
+				<div th:if="${param.logout}" class="message" style="color:green">
+					You have been successfully logged out...
+				</div>
+
+				<h2>LOGIN</h2>
+				<input type="text" id="email" name="username" placeholder="Enter Your Email Id" required><br><br>
+				<input type="password" id="password" name="password" placeholder="Enter Your Password" required><br><br>
+				<button type="submit" value="Login">Submit</button>
+
+				<p>Don't have an account? <a  th:href="@{/register}">Sign Up</a></p>
+			</form>
+		</div>
+	</div>
+
+</section>
+</body>
+</html>

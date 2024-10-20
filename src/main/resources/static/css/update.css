@@ -1,0 +1,73 @@
+body {
+    margin: 0;
+    font-family: "Poppins", sans-serif;
+    background-color: #BED7E4;
+  }
+
+
+  .navbar {
+    position: fixed;
+    background-color: #083852;
+    width: 100%;
+  }
+
+  .centered-div {
+    position: absolute;
+    top: 72%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    box-shadow: rgba(14, 30, 37, 0.12) 0px 2px 4px 0px,
+      rgba(14, 30, 37, 0.32) 0px 2px 16px 0px;
+    width: 70%;
+    display: flex;
+    border-radius: 15px;
+  }
+
+  .left-part {
+    flex: 30%;
+    background-color: #f0f0f0;
+    padding: 20px;
+    padding-top: 37px;
+    border-radius: 10px 0px 0px 10px;
+  }
+
+  .right-part {
+    flex: 70%;
+    background-color: #ffffff;
+    padding: 40px;
+    overflow-y: auto;
+    max-height: 80vh;
+    box-sizing: border-box;
+  }
+
+  .left-part img {
+    max-width: 100%;
+    height: auto;
+  }
+
+  .right-part form {
+    text-align: left;
+    max-width: 100%;
+  }
+
+  .right-part form .form-label {
+    font-weight: bold;
+  }
+
+  .right-part form .form-control {
+    margin-bottom: 10px;
+  }
+  .bg-dark {
+    --bs-bg-opacity: 1;
+    background-color: rgb(0 0 0) !important;
+  }
+  .dropdown-menu {
+    margin-left: 19%;
+  }
+  .contain {
+    position: relative;
+    background-color: #BED7E4;
+    background-blend-mode: darken;
+    background-size: cover;
+    height: 540px;
+  }

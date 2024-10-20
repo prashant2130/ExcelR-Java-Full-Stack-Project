@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Update Page</title>
+    <link rel="stylesheet" th:href="@{/css/addemp.css}" />
+
+    <!-- Add styles here -->
+
+</head>
+
+<body style="min-height:70vh;font-family: Arial, sans-serif;
+      line-height: 1.6;
+      background-image: url('/image/imgbg.jpg');
+      background-size: cover;
+      background-position: center;
+      background-attachment: fixed;
+      color: #333;">
+<ul>
+    <li style="float:left; border-left:5px solid red"><a href="#about">Employee Management System</a></li>
+    <li><a th:href="@{/logout}">Logout</a></li>
+    <li><a style="color:white">Welcome Admin</a></li>
+    <li><a th:href="@{/admin}">Home</a></li>
+</ul>
+
+<section>
+    <div style="display: flex; justify-content: center; align-items: flex-start; padding: 20px; margin-left:5%;margin-top:3%;">
+
+    <div style="text-align: center; margin: 50px;margin-top:12%;">
+        <img th:src="@{/image/update1.png}" alt="Employee Photo" style="width: 400px;   object-fit: cover;">
+        <h3 style="color:white;"></h3>
+
+
+    </div>
+    <div style="margin-left:0px; margin-top:3%;width:880px" class="container">
+        <h1>Employee Details Form</h1>
+
+        <!-- Tab Navigation -->
+        <div class="tabs">
+            <button class="tab active" data-tab="personal">Personal Details</button>
+            <button class="tab" data-tab="professional">Professional Details</button>
+            <button class="tab" data-tab="project">Project Details</button>
+            <button class="tab" data-tab="finance">Finance Details</button>
+        </div>
+
+        <!-- Single Form with All Fields -->
+
+
+        <!-- Personal Details Section -->
+        <form id="personal-form" th:action="@{/employee/savePersonalDetails}" method="post" class="detail-form active" novalidate>
+
+            <div id="personal" class="tab-content active">
+                <h2>Personal Details</h2>
+                <label for="fullName">Employee Full Name:</label>
+                <input type="text" id="fullName" name="fullName" required>
+                <label for="dob">Date of Birth:</label>
+                <input type="date" id="dob" name="dob" required>
+                <div id="labels" style="display: flex; align-items: center;">
+                    <label style="margin-right: 10px; font-weight: bold;">Gender:</label>
+                    <div style="margin-right: 15px;">
+                        <input type="radio" id="gender-male" name="gender" value="male" required>
+                        <label for="gender-male" style="margin-left: 5px;">Male</label>
+                    </div>
+                    <div style="margin-right: 15px;">
+                        <input type="radio" id="gender-female" name="gender" value="female" required>
+                        <label for="gender-female" style="margin-left: 5px;">Female</label>
+                    </div>
+                    <div>
+                        <input type="radio" id="gender-other" name="gender" value="other" required>
+                        <label for="gender-other" style="margin-left: 5px;">Other</label>
+                    </div>
+                </div>
+                <label for="age">Age:</label>
+                <input type="number" id="age" name="age" min="1" max="999" required>
+                <label for="currentCity">Current Address - City:</label>
+                <input type="text" id="currentCity" name="currentCity" required>
+                <label for="currentAddressLine1">Current Address - Address Line 1:</label>
+                <input type="text" id="currentAddressLine1" name="currentAddressLine1" required>
+                <label for="currentAddressLine2">Current Address - Address Line 2:</label>
+                <input type="text" id="currentAddressLine2" name="currentAddressLine2">
+                <label for="currentPincode">Current Address - Pin Code:</label>
+                <input type="text" id="currentPincode" name="currentPincode" pattern="\d{6}" title="Must be a 6 digit number" required>
+                <label for="permanentCity">Permanent Address - City:</label>
+                <input type="text" id="permanentCity" name="permanentCity" required>
+                <label for="permanentAddressLine1">Permanent Address - Address Line 1:</label>
+                <input type="text" id="permanentAddressLine1" name="permanentAddressLine1" required>
+                <label for="permanentAddressLine2">Permanent Address - Address Line 2:</label>
+                <input type="text" id="permanentAddressLine2" name="permanentAddressLine2">
+                <label for="permanentPincode">Permanent Address - Pin Code:</label>
+                <input type="text" id="permanentPincode" name="permanentPincode" pattern="\d{6}" title="Must be a 6 digit number" required>
+                <label for="mobile">Mobile:</label>
+                <input type="tel" id="mobile" name="mobile" pattern="\d{10}" title="Must be a 10 digit number" required>
+                <label for="personalMail">Personal Mail:</label>
+                <input type="email" id="personalMail" name="personalMail" required>
+                <label for="emergencyContactName">Emergency Contact Name:</label>
+                <input type="text" id="emergencyContactName" name="emergencyContactName" required>
+                <label for="emergencyContactMobile">Emergency Contact Mobile:</label>
+                <input type="tel" id="emergencyContactMobile" name="emergencyContactMobile" pattern="\d{10}" title="Must be a 10 digit number" required>
+            </div>
+
+            <!-- Professional Details Section -->
+            <div id="professional" class="tab-content">
+                <h2>Professional Details</h2>
+                <label for="employmentCode">Employment Code:</label>
+                <input type="text" id="employmentCode" name="employmentCode" pattern="\d{6}" title="Must be a 6 digit number" required>
+                <label for="companyMail">Company Mail:</label>
+                <input type="email" id="companyMail" name="companyMail" required>
+                <label for="position">Position:</label>
+                <input type="text" id="position" name="position" required>
+                <label for="department">Department:</label>
+                <input type="text" id="department" name="department" required>
+                <label for="officePhone">Office Phone:</label>
+                <input type="tel" id="officePhone" name="officePhone" pattern="\d{8,12}" title="Must be between 8 and 12 digits" required>
+                <label for="officeCity">Office City:</label>
+                <input type="text" id="officeCity" name="officeCity" required>
+                <label for="officeAddressLine1">Office Address - Address Line 1:</label>
+                <input type="text" id="officeAddressLine1" name="officeAddressLine1" required>
+                <label for="officeAddressLine2">Office Address - Address Line 2:</label>
+                <input type="text" id="officeAddressLine2" name="officeAddressLine2">
+                <label for="officePincode">Office Address - Pin Code:</label>
+                <input type="text" id="officePincode" name="officePincode" pattern="\d{6}" title="Must be a 6 digit number" required>
+                <label for="reportingManager">Reporting Manager (Employee Code/Mail):</label>
+                <input type="text" id="reportingManager" name="reportingManager" required>
+            </div>
+
+            <!-- Project Details Section -->
+            <div id="project" class="tab-content">
+                <h2>Project Details</h2>
+                <label for="projectName">Project Name:</label>
+                <input type="text" id="projectName" name="projectName" required>
+                <label for="clientName">Client Name:</label>
+                <input type="text" id="clientName" name="clientName" required>
+                <label for="projectStartDate">Project Start Date:</label>
+                <input type="date" id="projectStartDate" name="projectStartDate" required>
+                <label for="projectEndDate">Project End Date:</label>
+                <input type="date" id="projectEndDate" name="projectEndDate">
+                <label for="projectLocation">Project Location:</label>
+                <input type="text" id="projectLocation" name="projectLocation" required>
+                <label for="projectRole">Project Role:</label>
+                <input type="text" id="projectRole" name="projectRole" required>
+                <label for="reportingManagerProject">Reporting Manager (Employee Code/Mail):</label>
+                <input type="text" id="reportingManagerProject" name="reportingManagerProject" required>
+            </div>
+
+            <!-- Finance Details Section -->
+            <div id="finance" class="tab-content">
+                <h2>Finance Details</h2>
+                <label for="panCard">PAN Card:</label>
+                <input type="text" id="panCard" name="panCard" required>
+                <label for="aadharCard">Aadhar Card:</label>
+                <input type="text" id="aadharCard" name="aadharCard" required>
+                <label for="bankName">Bank Name:</label>
+                <input type="text" id="bankName" name="bankName" required>
+                <label for="branch">Branch:</label>
+                <input type="text" id="branch" name="branch" required>
+                <label for="ifscCode">IFSC Code:</label>
+                <input type="text" id="ifscCode" name="ifscCode" required>
+                <label for="ctcBreakup">CTC Breakup:</label>
+                <input type="text" id="ctcBreakup" name="ctcBreakup" required>
+
+                <!-- Submit Button in Finance Section -->
+                <button type="submit" class="save-btn">Save All Details</button>
+            </div>
+        </form>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const tabs = document.querySelectorAll('.tab');
+            const tabContents = document.querySelectorAll('.tab-content');
+
+            tabs.forEach(tab => {
+                tab.addEventListener('click', () => {
+                    // Remove active class from all tabs and tab contents
+                    document.querySelector('.tab.active').classList.remove('active');
+                    document.querySelector('.tab-content.active').classList.remove('active');
+                    // Add active class to the clicked tab and the corresponding content
+                    tab.classList.add('active');
+                    document.getElementById(tab.dataset.tab).classList.add('active');
+                });
+            });
+        });
+    </script>
+    </div>
+</section>
+</body>
+
+</html>

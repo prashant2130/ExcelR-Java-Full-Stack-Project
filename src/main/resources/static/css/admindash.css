@@ -1,0 +1,177 @@
+/* General styling */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background-color: #f4f6f9;
+    min-height: 100vh;
+    overflow: hidden; /* Disable scrolling for the body */
+}
+
+ul {
+    list-style-type: none;
+    font-weight: bold;
+    font-size: 18px;
+    height: 8%;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: #083852;
+}
+
+li {
+    float: right;
+}
+
+li:last-child {
+    border-right: none;
+}
+
+li a {
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 20px 22px;
+    text-decoration: none;
+}
+
+li a:hover:not(.active) {
+    background-color: #111;
+}
+
+.main-content {
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+    padding: 30px;
+    background-color: black;
+    height: 90vh;
+    overflow: hidden; /* Prevent main-content scrolling */
+}
+
+.header {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.header button {
+    padding: 10px 20px;
+    background-color: #3498db;
+    border: none;
+    color: white;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.header button:hover {
+    background-color: #2980b9;
+}
+
+/* Employee table styling */
+.employee-table {
+    flex-grow: 1;
+    background-color: white;
+    border-radius: 10px;
+    padding: 20px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: column;
+}
+
+.employee-table table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.employee-table thead {
+    background-color: #3498db;
+    color: white;
+}
+
+.employee-table th, .employee-table td {
+    padding: 15px;
+    text-align: left;
+    border-bottom: 1px solid #ddd;
+}
+
+.employee-table tbody {
+    display: block;
+    max-height: 400px; /* Adjust the height as needed */
+    overflow-y: scroll; /* Enable vertical scrolling only for table body */
+    width: 100%;
+}
+
+.employee-table tbody tr {
+    display: table;
+    width: 100%;
+    table-layout: fixed;
+}
+
+.employee-table thead, .employee-table tbody tr {
+    display: table;
+    width: 100%;
+    table-layout: fixed;
+}
+
+.employee-table tr:hover {
+    background-color: #f1f1f1;
+}
+
+/* Button styling */
+.employee-table .action-buttons {
+    display: flex;
+    gap: 10px; /* Space between buttons */
+}
+
+.employee-table button {
+    padding: 10px 15px; /* Adjust padding for uniform button size */
+    width: 80px; /* Set a fixed width for buttons */
+    height: 40px; /* Set a uniform height */
+    font-size: 14px;
+    background-color: #e74c3c;
+    border: none;
+    color: white;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.employee-table .view-btn {
+    background-color: #2ecc71;
+}
+
+.employee-table .view-btn:hover {
+    background-color: #27ae60;
+}
+
+.employee-table .update-btn {
+    background-color: #f39c12;
+}
+
+.employee-table .update-btn:hover {
+    background-color: #e67e22;
+}
+
+.employee-table .delete-btn {
+    background-color: #e74c3c;
+}
+
+.employee-table .delete-btn:hover {
+    background-color: #c0392b;
+}
+
+#btn {
+    background-color: #2ecc71;
+}
+
+.bst {
+    font-weight: bold;
+}

@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org" th:fragment="layout(content)">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title>Employee Dashboard</title>
+	<link rel="stylesheet" th:href="@{/css/employeedashboardstyle.css}" />
+	<link rel="stylesheet" th:href="@{/css/style.css}" />
+</head>
+<body>
+
+<ul>
+	<li style="float:left ; border-left:5px solid red"><a href="#about">Employee Management System</a></li>
+
+	<li><a th:href="@{/logout}">Logout</a></li>
+	<li><a>Welcome <span th:text="${user.name}"></span></a></li>
+	<li><a  th:href="@{/}">Home</a></li>
+
+
+</ul>
+
+<!-- Main Content Section -->
+<div class="dashboard-container">
+	<!-- Left Image Section -->
+	<div class="fixed-image-section">
+		<img src="image/personaldetail.png" alt="Profile Image" class="profile-image">
+	</div>
+
+	<!-- Details Section -->
+	<div class="details-section">
+		<div class="detail-card">
+			<span>Personal Details</span>
+			<button class="arrow" onclick="fun1()">&#9660;</button>
+		</div>
+		<div id="personal-details-block" style="display: none;" class="detail-card-card">
+			<table width="100%" style="color: black;">
+				<tr>
+					<td>Full Name : </td>
+					<td>xxxxxxx</td>
+					<td>Current Address : </td>
+					<td colspan="3">xxxxxx</td>
+				</tr>
+				<tr>
+					<td>DOB : </td>
+					<td>mm-dd-yyyy</td>
+					<td> </td>
+
+				</tr>
+				<tr>
+					<td>Gender : </td>
+					<td>xxxxxx</td>
+					<td> </td>
+
+				</tr>
+				<tr>
+					<td>Mobile : </td>
+					<td>xxxxxxxx</td>
+					<td>PermanetAddress: </td>
+					<td colspan="4"></td>
+
+				</tr>
+				<tr>
+					<td>Email :  </td>
+					<td>xxx@gmail.com</td>
+					<td> </td>
+
+				</tr>
+				<tr>
+					<td>ECN : </td>
+					<td>xxxxxxxxxx</td>
+					<td> </td>
+				</tr>
+				<tr>
+					<td>EmergencyMobile: </td>
+					<td>123456789</td>
+					<td> </td>
+
+				</tr>
+				<!-- Rest of the personal details -->
+			</table>
+		</div>
+
+		<div class="detail-card">
+			<span>Professional Details</span>
+			<button class="arrow" onclick="fun2()">&#9660;</button>
+		</div>
+		<div id="professional-details-block" style="display: none;" class="detail-card-card">
+			<table width="100%" style="color: black;">
+				<tr>
+					<td>Employee Code : </td>
+					<td>xxxxxxx</td>
+					<td>Emp History : </td>
+					<td colspan="8">xxxxxx</td>
+				</tr>
+				<tr>
+					<td>Email : </td>
+					<td>xxxx@xxx.com</td>
+					<td> </td>
+
+				</tr>
+				<tr>
+					<td>City : </td>
+					<td>xxxxxxxxxx</td>
+					<td> </td>
+
+				</tr>
+				<tr>
+					<td>Office Address : </td>
+					<td>xxxxxxxxxx</td>
+					<td> </td>
+
+				</tr>
+				<tr>
+					<td>RMEC : </td>
+					<td>xxxxxxxxxx</td>
+					<td> </td>
+
+				</tr>
+				<tr>
+					<td>HR Name : </td>
+					<td>xxxxxxxxxx</td>
+					<td> </td>
+				</tr>
+				<tr>
+					<td>Date Of Joining : </td>
+					<td>dd-mm-yyyy</td>
+					<td> </td>
+
+				</tr>
+			</table>
+		</div>
+		<div class="detail-card">
+			<span>Project Details</span>
+			<button class="arrow" onclick="fun3()">&#9660;</button>
+		</div>
+		<div id="project-details-block" style="display: none;"class="detail-card-card">
+			<p>No data found</p>
+		</div>
+		<div class="detail-card">
+			<span>Finance</span>
+			<button class="arrow" onclick="fun4()">&#9660;</button>
+		</div>
+		<div id="finance-block" style="display: none;"class="detail-card-card">
+			<table width="100%" style="color: black;">
+				<tr>
+					<td>Pancard no : </td>
+					<td>xxxxxxx</td>
+					<td>Branch : </td>
+					<td>xxxxxx</td>
+				</tr>
+				<tr>
+					<td>Aadhar : </td>
+					<td>xxxx xxxx xxxx</td>
+					<td>IFSC Code :</td>
+					<td>xxxxxxxxxx</td>
+				</tr>
+				<tr>
+					<td>Bank Name : </td>
+					<td>xxxxxxxxxx</td>
+					<td>CTC : </td>
+					<td> xxxx</td>
+				</tr>
+			</table>
+
+
+			<div class="download-button">
+				<button>Download PDF</button>
+			</div>
+			<div class="note">
+				*Note: Download your 6-month salary statement here.*
+				        </div>
+		</div>
+	</div>
+</div>
+
+<!-- Footer Section -->
+<div style="position: fixed; left: 0; bottom: 0; width: 100%; background-color: #0F4E6F; color: white; text-align: center; height:50px;padding-top:10px">
+	<p style="font-size: 20px; font-weight: bold;">&copy; ExcelRGroup13-2024</p>
+</div>
+
+<script>
+function fun() {
+var logoutButton = document.getElementById("logoutbutton");
+
+if (logoutButton.style.display === "none" || logoutButton.style.display === "") {
+logoutButton.style.display = "block"; // Show logout button
+} else {
+logoutButton.style.display = "none"; // Hide logout button
+}
+}
+
+function fun1(){
+var content = document.getElementById("personal-details-block");
+
+if (content.style.display === "none" || content.style.display === "") {
+content.style.display = "block";
+
+} else {
+content.style.display = "none";
+
+}
+}
+
+
+function fun2(){
+var content = document.getElementById("professional-details-block");
+
+if (content.style.display === "none" || content.style.display === "") {
+content.style.display = "block";
+} else {
+content.style.display = "none";
+}
+}
+function fun3(){
+var content = document.getElementById("project-details-block");
+if (content.style.display === "none" || content.style.display === "") {
+content.style.display = "block";
+} else {
+content.style.display = "none";
+}
+}
+function fun4(){
+var content = document.getElementById("finance-block");
+if (content.style.display === "none" || content.style.display === "") {
+content.style.display = "block";
+} else {
+content.style.display = "none";
+}
+}
+
+</script>
+</body>
+</html>

@@ -1,0 +1,101 @@
+
+    /* General Body Styles */
+    body {
+        font-family: Arial, sans-serif;
+        background-color: #f8f9fa; /* Light gray background */
+        color: #333; /* Dark text color for readability */
+        height: 100vh; /* Full height for main body */
+        overflow: hidden; /* Prevent scrolling of the main body */
+    }
+
+    /* Navbar Styles */
+    .navbar {
+        z-index: 1000; /* Make sure navbar is above other content */
+    }
+
+    /* Flexbox styles for the main container */
+    section {
+        display: flex;
+        justify-content: center;
+        align-items: flex-start; /* Align items at the top */
+        padding: 20px;
+        height: calc(100vh - 70px); /* Adjust height to avoid navbar */
+    }
+
+    /* Employee Photo and Input Form */
+    .employee-info {
+        flex: 0 0 350px; /* Fixed width for the left section */
+        text-align: center; /* Center content */
+        margin-top:40px;
+                margin-right:10%; /* Space between image and details */
+    }
+
+    img {
+            width: 300px;
+            height: 300px; /* Maintain aspect ratio */
+        border-radius: 50%; /* Circular image */
+        object-fit: cover; /* Cover the image */
+    }
+
+    /* Employee Details */
+    .employee-details {
+        width: 800px;
+
+        flex: 1; /* Allow this to grow and take up available space */
+        max-height: 70vh; /* Limit height of employee details */
+        overflow-y: auto; /* Enable vertical scrolling */
+        background-color: #fff; /* Background color for the details area */
+        border: 1px solid #ddd; /* Border for the details area */
+        padding: 20px; /* Padding inside the details area */
+    }
+
+    /* Table Styles */
+    .table {
+        width: 100%; /* Full width */
+        margin-top: 20px; /* Space above the table */
+        border-collapse: collapse; /* Collapse borders */
+        background-color: #ffffff; /* White background for tables */
+    }
+
+    .table-bordered {
+        border: 1px solid #ddd; /* Border for the table */
+    }
+
+    .table th, .table td {
+        padding: 15px; /* Padding for cells */
+        border: 1px solid #ddd; /* Border for cells */
+        font-size: 16px; /* Font size */
+    }
+
+    .table th {
+        background-color: #f0f0f0; /* Light gray for headers */
+        font-weight: bold; /* Bold text for headers */
+        color: #333; /* Dark text color for headers */
+    }
+
+    .table td {
+        background-color: #ffffff; /* White for table data */
+        color: #555; /* Slightly lighter text for data */
+    }
+
+    /* Button Styles */
+    .btn {
+        margin-top: 20px; /* Space above the buttons */
+    }
+
+    /* Responsive Design */
+    @media (max-width: 768px) {
+        section {
+            flex-direction: column; /* Stack elements vertically on smaller screens */
+            align-items: center; /* Center content */
+        }
+
+        .employee-info {
+            margin-right: 0; /* Remove right margin on smaller screens */
+            margin-bottom: 20px; /* Add space below */
+        }
+
+        .employee-details {
+            max-height: 50vh; /* Adjust height for smaller screens */
+        }
+    }

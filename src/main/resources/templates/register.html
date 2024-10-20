@@ -1,0 +1,72 @@
+<!doctype html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+	<meta charset="UTF-8" />
+	<title>Employee Management System - Register</title>
+
+	<link rel="stylesheet" th:href="@{/css/style.css}" />
+
+	<link rel="stylesheet" th:href="@{/css/register.css}" />
+
+</head>
+<body style="font-family: Arial, sans-serif;
+line-height: 1.6;
+background-image: url('/image/bgimg3.jpg');
+background-size: cover;
+background-position: center;
+background-attachment: fixed;
+color: #000000;">
+
+<ul>
+	<li style="float:left ; border-left:5px solid red"><a>Employee Management System</a></li>
+
+	<li><a th:href="@{/about}">About</a></li>
+
+	<li><a th:href="@{/signin}">Login</a></li>
+
+	<li><a  th:href="@{/}">Home</a></li>
+</ul>
+
+<section class="center">
+
+	<div th:if="${session.fail}">
+		<h3 th:text="${session.fail}" class="error"></h3>
+		<th:block th:text="${#session.removeAttribute('fail')}"></th:block>
+	</div>
+
+	<div th:if="${session.msg}">
+		<h3 th:text="${session.msg}" class="success"></h3>
+		<th:block th:text="${#session.removeAttribute('msg')}"></th:block>
+	</div>
+
+
+	<div class="container">
+		<!-- Left Side with Text -->
+		<div class="left-panel">
+			<h1>Our employees are our greatest asset. ✌</h1>
+			<p>Register Now</p>
+		</div>
+		<!-- Right Side with Form -->
+		<div class="right-panel">
+
+			<form th:action="@{/createuser}" method="post" class="register-form">
+
+				<h2>REGISTER</h2>
+				<br><br>
+						<input type="text" id="name" name="name" placeholder="Enter Your User Name" required>
+
+						<input type="password" id="password" name="password" placeholder="Enter Your Password" required>
+
+						<input type="text" id="email" name="email" placeholder="Enter Your Email Id" required>
+
+						<input type="number" id="phone" name="phone" placeholder="Enter Your Phone No" required>
+				<button type="submit" value="Register">Submit</button>
+
+				<p>If you have an account? <a th:href="@{/signin}">Login</a></p>
+			</form>
+		</div>
+	</div>
+</section>
+
+</body>
+</html>
